@@ -1,0 +1,185 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    background-color: #111; /* dark gray background */
+    color: #e0e0e0; /* light gray text */
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;      /* stay behind everything */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;           /* behind main content */
+}
+
+
+
+/* ===========================
+   SIDEBAR
+=========================== */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #1a1a1a; /* dark charcoal */
+    border-radius: 10px 0 0 10px;
+    z-index: 10;
+}
+
+.sidebar .icon {
+    font-size: 24px;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.2s;
+    background-color: #1a1a1a; /* same as sidebar */
+    border-radius: 10px;
+}
+
+.sidebar .icon:hover,
+.sidebar .icon.active {
+    background-color: #000; /* near-black glow */
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #000; /* soft black glow */
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+main {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;   /* top of hero */
+    align-items: center;           /* horizontal center */
+    min-height: 100vh;             /* full viewport height */
+    padding-top: 20vh;             /* pushes content 20% down from top */
+    position: relative;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 72px;
+}
+
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ===========================
+   SEARCH BAR
+=========================== */
+.search-bar {
+    display: block;
+    margin: 0 auto 40px auto;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    background-color: #1c1c1c; /* dark gray */
+    color: #fff;
+    outline: none;
+}
+
+.search-bar::placeholder {
+    color: #888888;
+}
+
+/* ===========================
+   GAME GRID
+=========================== */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 15px; /* combined your gap settings */
+
+}
+
+
+.game-card {
+    background-color: #1c1c1c; /* dark gray card */
+    border-radius: 12px;
+    overflow: hidden;
+    width: 150px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #000; /* soft black glow */
+}
+
+.game-thumb {
+    width: 100%;
+    display: block;
+}
+
+.game-name {
+    padding: 8px 0;
+    font-weight: 200;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    .sidebar {
+        flex-direction: row;
+        bottom: 0;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: 10px 10px 0 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero {
+        padding-top: 15vh; /* slightly less on smaller screens */
+    }
+
+
+    .game-card {
+        width: 120px;
+    }
+}
+
+
+
+
+
+
+
+
+

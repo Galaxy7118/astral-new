@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background-color: #000000;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* centers horizontally */
+        }
+
+        header {
+            background: #000000;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        iframe {
+            flex: 1;
+            border: none;
+            width: 100%;
+        }
+
+        .error {
+            color: #f66;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a.back {
+            color: #888888;
+            text-decoration: none;
+        }
+        a.back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="back" href="/g.html">&larr; Back to Menu</a>
+    </header>
+    <iframe id="contentFrame" src=""></iframe>
+    <div class="error" id="errorMessage" style="display: none;"></div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const gameUrl = getQueryParam('url');
+        const iframe = document.getElementById('contentFrame');
+        const errorMessage = document.getElementById('errorMessage');
+
+        if (gameUrl) {
+            iframe.src = gameUrl;
+        } else {
+            errorMessage.textContent = "No item URL provided!";
+            errorMessage.style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
